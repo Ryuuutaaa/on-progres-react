@@ -1,0 +1,20 @@
+const [myOshi, setMyOshi] = useState(0);
+  const [member, setMember] = useState("");
+
+  const handleMyOshi = () => {
+    setMyOshi((prev) => prev + 1);
+  };
+
+  const kurangOshi = () => {
+    if (myOshi > 0) {
+      setMyOshi((prev) => prev - 1);
+    }
+  };
+
+  useEffect(() => {
+    if (myOshi > 2) {
+      setMember("Adel");
+    } else {
+      setMember(null);
+    }
+  }, [myOshi]);
